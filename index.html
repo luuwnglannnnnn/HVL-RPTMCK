@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>'HVL' - RPT MCK</title>
+<link rel="icon" type="image/x-icon" href="./cover.jpg"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+  <aside class="side">
+    <div class="disc-wrap" id="discWrap">
+      <div class="disc" id="disc">
+        <div class="disc-flip-wrap">
+          <div class="disc-flip" id="discFlip">
+            <div class="disc-face disc-face-front" id="discFaceFront"></div>
+            <div class="disc-face disc-face-back" id="discFaceBack"></div>
+          </div>
+        </div>
+        <div class="disc-sheen"></div>
+        <div class="disc-spindle"></div>
+      </div>
+    </div>
+
+    <div class="brand">
+      <h6>Album</h6>
+      <h1>HVL</h1>
+      <h6> RPT MCK • Jun 17, 2026 • 30 songs</h6>
+    </div>
+
+    <div class="status-line">
+      <span>Loaded: <span class="count" id="loadedCount">0</span> / 30 tracks</span>
+      <span id="totalDur">--:--</span>
+    </div>
+  </aside>
+
+  <main class="playlist-panel">
+    <div class="playlist-header">
+      <h2>Tracklist</h2>
+      <span class="hint" id="playlistHint">Loading…</span>
+    </div>
+    <ul id="playlist"></ul>
+  </main>
+</div>
+
+<div class="player-bar">
+  <div class="player-inner">
+    <div class="progress-row">
+      <span class="time" id="curTime">0:00</span>
+      <input type="range" id="seek" min="0" max="100" value="0" step="0.1" disabled>
+      <span class="time end" id="durTime">0:00</span>
+    </div>
+    <div class="controls-row">
+      <div class="now-playing">
+        <div class="np-title" id="npTitle">Nothing playing</div>
+        <div class="np-sub" id="npSub">Pick a track to start</div>
+      </div>
+      <div class="transport">
+        <button id="shuffleBtn" title="Shuffle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3h4v4"/><path d="M3 20 21 3"/><path d="M17 21h4v-4"/><path d="M3 4l6.5 6.5"/><path d="M14.5 13.5 21 20"/></svg>
+        </button>
+        <button id="prevBtn" title="Previous">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zM9.5 12l9-6v12z"/></svg>
+        </button>
+        <button id="playBtn" class="play" title="Play/Pause">
+          <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button id="nextBtn" title="Next">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6h2v12h-2zM6 6l9 6-9 6z"/></svg>
+        </button>
+        <button id="repeatBtn" title="Repeat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          <span class="repeat-badge" id="repeatBadge">1</span>
+        </button>
+      </div>
+      <div class="volume-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>
+        <input type="range" id="volume" min="0" max="1" value="0.9" step="0.01">
+      </div>
+    </div>
+  </div>
+</div>
+
+<audio id="audio"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
